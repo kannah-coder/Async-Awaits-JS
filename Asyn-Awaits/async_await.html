@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // async makes a function return a promise
+        // await makes an async function wait for a promise
+
+
+        function walkDog(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve('you walked the dog!!');
+                },2500);
+            });
+    }
+        function cleanKitchen(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    const clean=false;
+                    if(clean){
+                        resolve('you have cleaned the kitchen!!');
+                    }
+                    else{
+                        reject("you not cleaned kitchen");
+                    }
+                   
+                },1500);
+            });
+    }
+        function takeOutTrash(){
+            return new Promise((resolve,reject)=>{
+
+                setTimeout(()=>{
+                    const takeTrash=false;
+                    if(takeTrash){
+                        resolve('you takout the trash!!');
+                    }
+                    else{
+                        reject('you didnot the trash!!');
+
+                    }
+                    
+                },1000);
+            });
+    }
+      
+            async function doChores() {
+               try{    
+            const walkedDogResult=await walkDog();
+            console.log(walkedDogResult);
+            
+            const cleanKitchenResult=await cleanKitchen();
+            console.log(cleanKitchenResult);
+
+            const takeoutResult=await takeOutTrash();
+            console.log(takeoutResult);
+            doChores();
+        }
+       
+        catch(error){
+            console.error(error);
+        }
+      
+
+    }
+      doChores();
+
+     
+    </script>
+</body>
+</html>
