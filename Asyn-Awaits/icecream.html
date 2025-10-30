@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // async makes a function return a promise
+        // await makes an async function wait for a promise
+
+
+      // Simulate delay
+        function delay(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        
+        // Async function for making ice cream
+        async function makeIceCream() {
+          console.log("🍓 Step 1: Collecting ingredients...");
+          await delay(1000);
+        
+          console.log("🥣 Step 2: Mixing ingredients...");
+          await delay(1000);
+        
+          console.log("❄️ Step 3: Freezing ice cream...");
+          await delay(1500);
+        
+          console.log("🍦 Step 4: Ice cream is ready! Enjoy!");
+        }
+        
+        // Call the async function
+        makeIceCream();
+
+    </script>
+</body>
+</html>
