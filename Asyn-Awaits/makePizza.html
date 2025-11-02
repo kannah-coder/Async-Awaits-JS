@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async Pizza</title>
+</head>
+<body>
+<script>
+  // Helper function that returns a Promise
+  function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function makePizza() {
+    console.log("🍕 Starting to make pizza...");
+
+    await wait(1000);
+    console.log("✅ Dough prepared");
+
+    await wait(1000);
+    console.log("🧀 Cheese added");
+
+    await wait(1000);
+    console.log("🔥 Pizza baked");
+
+    console.log("🎉 Pizza ready (Async/Await ended)\n");
+  }
+
+  // Call the async function
+  makePizza();
+</script>
+</body>
+</html>
